@@ -1,0 +1,35 @@
+﻿@model lab3Crud.Models.Instructor
+@{
+    ViewBag.Title = "details";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>details</title>
+</head>
+<body>
+    <div>
+        <table border="1" style="text-align:center; width:500px;">
+            <tr>
+                <th> id</th>
+                <td>@Model.Dept_Id</td>
+            </tr>
+            <tr>
+                <th> name</th>
+                <td>@Model.Ins_Name</td>
+            </tr>
+
+
+            <tr>
+                <th> department name</th>
+                <td>@Model.Department.Dept_Name</td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

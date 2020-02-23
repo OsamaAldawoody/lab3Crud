@@ -1,0 +1,49 @@
+﻿@model lab3Crud.Models.Instructor
+@{
+    ViewBag.Title = "create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>create</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(n => n.Ins_Id)</td>
+                    <td>@Html.TextBoxFor(n => n.Ins_Id)</td>
+                    <td>@Html.ValidationMessageFor(n => n.Ins_Id)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(n => n.Ins_Name)</td>
+                    <td>@Html.TextBoxFor(n => n.Ins_Name)</td>
+                    <td>@Html.ValidationMessageFor(n => n.Ins_Name)</td>
+                </tr>
+
+
+                <tr>
+                    <td>@Html.LabelFor(n => n.Dept_Id)</td>
+                    <td>@Html.DropDownListFor(n => n.Dept_Id, (SelectList)ViewBag.li)</td>
+                    <td>@Html.ValidationMessageFor(n => n.Dept_Id)</td>
+                </tr>
+
+            </table>
+
+
+            <input type="submit" value="save" />
+
+            <script src="~/Scripts/jquery-1.10.2.js"></script>
+            <script src="~/Scripts/jquery.validate.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+        </form>
+    </div>
+</body>
+</html>

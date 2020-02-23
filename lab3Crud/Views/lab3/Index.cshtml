@@ -1,0 +1,42 @@
+﻿@model List<lab3Crud.Models.Instructor>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("new Instructor","create")
+        <table border="1" style="width:100%; text-align:center;">
+            <tr><th>id</th> <th>name</th><th>department</th><th></th></tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Ins_Id</td>
+                    <td>@item.Ins_Name</td>
+                    <td>@item.Department.Dept_Name</td>
+
+                    <td>
+                        @Html.ActionLink("view", "details", "lab3", new { id = item.Ins_Id }, new { })
+                        |
+                        @Html.ActionLink("Edit", "edit", "lab3", new { id = item.Ins_Id }, new { })
+
+                        |
+                        @Html.ActionLink("delete", "delete", "lab3", new { id = item.Ins_Id }, new { onClick = "return confirm('are you sure to delete this student?')" })
+
+
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+    </div>
+</body>
+</html>
